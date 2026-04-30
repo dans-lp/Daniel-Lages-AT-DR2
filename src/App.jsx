@@ -5,8 +5,9 @@ import Ex3 from './Folder_3/Ex3';
 import Ex4 from './Folder_4/Ex4';
 import Ex5 from './Folder_5/Ex5';
 import Ex6 from './Folder_6/Ex6';
-import Ex6 from './Folder_7/Ex7';
+import Ex7 from './Folder_7/Ex7';
 import Ex8 from './Folder_8/Ex8';
+import Ex9 from './Folder_9/Ex9';
 /*
 */
 
@@ -26,7 +27,7 @@ function App() {
          <h3>Exercício 6</h3><Ex6 /><hr />
          <h3>Exercício 7</h3><Ex7 /><hr />
          <h3>Exercício 8</h3><Ex8 /><hr />
-         <h3>Exercício 9</h3><hr />
+         <h3>Exercício 9</h3><Ex9 /><hr />
          <h3>Exercício 10</h3><hr />
          <h3>Exercício 11</h3><hr />
          <h3>Exercício 12</h3><hr />

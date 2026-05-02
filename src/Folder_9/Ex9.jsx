@@ -12,9 +12,17 @@ function ListagemDeTarefas({ items: arr }) {
       setCheckedStates(newCheckedStates);
    };
 
+   const wrapAll = () => {
+      const newCheckedStates = [...checkedStates].map(item => !item);
+      setCheckedStates(newCheckedStates);
+   };
+
    return (
       <div>
          <h5>Tarefas Checklist</h5>
+         <button
+            onClick={() => wrapAll()}
+         >Finalizar todos</button>
          <ul>
             {arr.map((item, idx) =>
                <li key={idx}>

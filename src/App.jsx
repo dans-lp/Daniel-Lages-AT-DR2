@@ -1,5 +1,6 @@
 import './App.css'
 import Ex1 from './Folder_1/Ex1';
+import Ex10 from './Folder_10/Ex10';
 import Ex2 from './Folder_2/Ex2';
 import Ex3 from './Folder_3/Ex3';
 import Ex4 from './Folder_4/Ex4';
@@ -28,7 +29,7 @@ function App() {
          <h3>Exercício 7</h3><Ex7 /><hr />
          <h3>Exercício 8</h3><Ex8 /><hr />
          <h3>Exercício 9</h3><Ex9 /><hr />
-         <h3>Exercício 10</h3><hr />
+         <h3>Exercício 10</h3><Ex10 /><hr />
          <h3>Exercício 11</h3><hr />
          <h3>Exercício 12</h3><hr />
          <h3>Exercício 13</h3><hr />

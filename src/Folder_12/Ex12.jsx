@@ -1,15 +1,57 @@
 import { useState } from "react";
 
+/*
+
 function DataList({ data }) {
    return (
       <div>
          <ul>
             {data.map((item) =>
-               <li key={item.id}>
+               <li key={item.id} style={{ listStyle: "none" }}>
                   {item.name}
                </li>
             )}
          </ul>
+      </div>
+   )
+}
+*/
+
+function DataList({ data }) {
+   return (
+      <div>
+         <table style={{
+            borderCollapse: "collapse",
+            width: "100%",
+            marginBottom: "10px"
+         }}>
+            <thead style={{
+               border: "1px solid #dddddd",
+               textAlign: "left",
+               backgroundColor: "#f2f2f2"
+            }}>
+               <tr>
+                  <th>Id</th>
+                  <th>Nome</th>
+               </tr>
+            </thead>
+            <tbody>
+               {data.map((item) => (
+                  <tr key={item.id}>
+                     <td style={{
+                        border: "1px solid #dddddd",
+                        textAlign: "left",
+                        padding: "8px"
+                     }}>{item.id}</td>
+                     <td style={{
+                        border: "1px solid #dddddd",
+                        textAlign: "left",
+                        padding: "8px"
+                     }}>{item.name}</td>
+                  </tr>
+               ))}
+            </tbody>
+         </table>
       </div>
    );
 }
@@ -17,13 +59,29 @@ function DataList({ data }) {
 
 function ListItem({ nomeSubmetido, lista }) {
 
+   const listaFiltrada = lista.filter(item => item.name === nomeSubmetido);
+
    return (
-      <>
-      </>
+      <div>
+         {nomeSubmetido !== '' && listaFiltrada.length === 0 && (
+            <p>Nenhum nome encontrado.</p>
+         )}
+
+         <ul style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+         }}>
+            {listaFiltrada.map(itemFiltrado => (
+               <li key={itemFiltrado.id}>
+                  {itemFiltrado.name} - Id:{itemFiltrado.id}
+               </li>
+            ))}
+         </ul>
+      </div>
    );
 }
-
-
 
 function Ex12() {
 
@@ -31,22 +89,21 @@ function Ex12() {
       { id: 1, name: "Alice" },
       { id: 2, name: "Bob" },
       { id: 3, name: "Charlie" },
-      { id: 4, name: "Jane" },
-      { id: 5, name: "Michael" },
-      { id: 6, name: "Sarah" },
+      { id: 4, name: "Alice" },
+      { id: 5, name: "Jane" },
+      { id: 6, name: "Michael" },
+      { id: 9, name: "Sarah" },
    ];
 
    const [inputText, setInputText] = useState('');
-   const [nameSubmit, setNameSubmit] = useState('');
+   const [nomeEscolhido, setNomeEscolhido] = useState('');
 
    const handleSubmit = (e) => {
       e.preventDefault();
 
       if (inputText.trim() == '') return;
 
-      setNameSubmit(e);
-      console.log(e);
-
+      setNomeEscolhido(inputText);
       setInputText('');
    };
 
@@ -62,10 +119,15 @@ function Ex12() {
                type="text"
                value={inputText}
                onChange={(e) => setInputText(e.target.value)}
-               placeholder="escreva o nome..."
+               placeholder="escreva um nome..."
             />
          </form>
+         <div>
+            <h5>Resposta:</h5>
+            <ListItem nomeSubmetido={nomeEscolhido} lista={items} />
+         </div>
       </div>
+
    );
 }
 

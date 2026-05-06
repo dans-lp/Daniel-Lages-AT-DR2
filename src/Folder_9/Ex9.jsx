@@ -13,7 +13,7 @@ function ListagemDeTarefas({ items: arr }) {
    };
 
    const wrapAll = () => {
-      const newCheckedStates = [...checkedStates].map(item => !item);
+      const newCheckedStates = [...checkedStates].map(item => true);
       setCheckedStates(newCheckedStates);
    };
 

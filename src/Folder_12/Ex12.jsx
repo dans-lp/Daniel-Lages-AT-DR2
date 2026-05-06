@@ -1,21 +1,5 @@
 import { useState } from "react";
 
-/*
-
-function DataList({ data }) {
-   return (
-      <div>
-         <ul>
-            {data.map((item) =>
-               <li key={item.id} style={{ listStyle: "none" }}>
-                  {item.name}
-               </li>
-            )}
-         </ul>
-      </div>
-   )
-}
-*/
 
 function DataList({ data }) {
    return (

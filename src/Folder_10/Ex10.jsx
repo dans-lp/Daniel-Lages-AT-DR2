@@ -26,7 +26,7 @@ function Ex10() {
 
 
    return (
-      <div>
+      <div className="centerList">
          <button onClick={fetchUsers}>Exibir usuários</button>
          <ul dangerouslySetInnerHTML={{ __html: templateStringsUsers }} />
       </div>

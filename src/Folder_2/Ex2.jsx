@@ -2,7 +2,7 @@ function ExibindoNomes({ listaNomes }) {
 
    return (
       <>
-         <ul>
+         <ul className="centerList">
             {listaNomes.map((nome, index) =>
                <li key={index}>
                   {nome}

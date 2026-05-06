@@ -23,7 +23,7 @@ function ListagemDeTarefas({ items: arr }) {
          <button
             onClick={() => wrapAll()}
          >Finalizar todos</button>
-         <ul>
+         <ul className="centerList">
             {arr.map((item, idx) =>
                <li key={idx}>
                   {checkedStates[idx] ? <del>{item}</del> : item}

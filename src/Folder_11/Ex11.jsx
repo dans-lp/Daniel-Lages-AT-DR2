@@ -40,7 +40,7 @@ function Ex11() {
       }
 
       return (
-         <ul>
+         <ul className="centerList">
             {tarefas.map((item, idx) => {
                const originalIndex = tarefa.indexOf(item);
                return (

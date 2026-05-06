@@ -51,12 +51,7 @@ function ListItem({ nomeSubmetido, lista }) {
             <p>Nenhum nome encontrado.</p>
          )}
 
-         <ul style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-         }}>
+         <ul className="centerList">
             {listaFiltrada.map(itemFiltrado => (
                <li key={itemFiltrado.id}>
                   {itemFiltrado.name} - Id:{itemFiltrado.id}
